@@ -16,3 +16,10 @@ feed.xml
 
 # OS
 .DS_Store
+
+#Virtual environments
+*.davenv/
+davenv/
+*.venv/
+venv/ 
+
