@@ -1,0 +1,18 @@
+# Secrets & credentials — never commit these
+credentials/
+config.yaml
+*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Generated output
+episodes/
+feed.xml
+
+# OS
+.DS_Store

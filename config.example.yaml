@@ -1,0 +1,20 @@
+# How far back each run looks, in hours.
+lookback_hours: 24
+
+# How many items to keep per source (keeps the digest manageable).
+max_items_per_source: 8
+
+# Your inbox: only emails from these senders are included.
+gmail:
+  senders:
+    - newsletter@example.com
+    - digest@anotherexample.com
+
+# News feeds (RSS). Add or remove freely — they're just URLs.
+feeds:
+  - name: BBC News
+    url: https://feeds.bbci.co.uk/news/rss.xml
+  - name: BBC Manchester
+    url: https://feeds.bbci.co.uk/news/england/manchester/rss.xml
+  # - name: The Guardian UK
+  #   url: https://www.theguardian.com/uk/rss
