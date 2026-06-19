@@ -5,3 +5,5 @@ feedparser
 beautifulsoup4
 PyYAML
 certifi
+google-genai
+python-dotenv

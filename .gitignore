@@ -1,6 +1,7 @@
 # Secrets & credentials — never commit these
 credentials/
 config.yaml
+.env
 *.json
 
 # Python
@@ -13,6 +14,7 @@ venv/
 # Generated output
 episodes/
 feed.xml
+script.txt
 
 # OS
 .DS_Store
@@ -22,4 +24,9 @@ feed.xml
 davenv/
 *.venv/
 venv/ 
+
+
+
+
+
 
