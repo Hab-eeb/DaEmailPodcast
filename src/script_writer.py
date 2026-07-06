@@ -43,6 +43,11 @@ ACCURACY
 - Use ONLY the material provided. Do not invent facts, numbers, or quotes.
 - If something is unclear or truncated, summarise it lightly rather than guess.
 
+AUDIO DELIVERY
+- Begin the script with a single bracketed style note on its own line, like:
+  [warm and conversational, like a trusted friend giving a morning briefing]
+- This is the only formatting allowed. Everything after it is plain spoken text.
+
 Output ONLY the script text — no preamble, labels, or stage directions.
 """
 
@@ -57,7 +62,9 @@ def write_script(items: list[Item], client: genai.Client | None = None) -> str:
         config=types.GenerateContentConfig(
             system_instruction=SYSTEM_INSTRUCTION,
             temperature=0.7,            # natural-sounding, but still grounded
-            max_output_tokens=2000,
+            # max_output_tokens=2000,
+            max_output_tokens=4000,
+            thinking_config=types.ThinkingConfig(thinking_budget=0)
         ),
     )
     return (resp.text or "").strip()
