@@ -2,7 +2,6 @@
 credentials/
 config.yaml
 .env
-*.json
 
 # Python
 __pycache__/
