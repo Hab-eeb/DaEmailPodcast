@@ -7,6 +7,7 @@ from pathlib import Path
 
 from google import genai
 from dotenv import load_dotenv
+from ..audio import convert_wav_to_mp3
 
 load_dotenv()
 
@@ -53,9 +54,15 @@ def synthesize(script: str, client: genai.Client | None = None, output_path: Pat
             )
             pcm = base64.b64decode(interaction.output_audio.data)
             out = output_path or EPISODES_DIR / _default_filename()
+            # _write_wav(out, pcm)
+            # print(f"  Audio saved → {out}")
             _write_wav(out, pcm)
-            print(f"  Audio saved → {out}")
-            return out
+
+            mp3_path = convert_wav_to_mp3(out)
+
+            print(f"  Audio saved → {mp3_path}")
+            return mp3_path
+            # return out
         except Exception as e:
             print(f"  {model} failed: {e}")
             last_error = e
